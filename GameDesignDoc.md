@@ -5,15 +5,19 @@ The game is a 3-hole 2-D mini-golf game with several obstacles. The user must hi
 
 ## The Objects
 **1. Moving Blocks:** These objects are moving tiles that disrupt the movement of the golf ball if struck. These make it difficult for the user by diverting the golf ball away from the intended direction. These will be represented by specific rectangle objects of different sizes. As time progresses in later levels, these blocks will increase in size and speed to make it even more difficult.
+
 ![ttrojan](images/box.png "Tile")
 
 **2. Golf Hole:** There is one golf hole per hole and in each level the golf hole will move randomly in a given area. The user must make the golf ball touch the hole to complete the level. 
+
 ![ttrojan](images/golfhole.png "Hole")
 
 **3. Water Hazards:** Water hazards will exist on every hole and they do not move. If the user hits his golf ball into the water, he loses a golf ball. 
+
 ![ttrojan](images/w3.png "Water")
 
 **4. Barges: ** A Barge will exist only on level 3 to transport the ball across the water. 
+
 ![ttrojan](images/barge.png "Barge")
 
 **5. Stars:** Stars move around the course randomly and if the ball hits a star, the user receives points. They do not affect the velocity of the ball.
@@ -25,12 +29,15 @@ The game is a 3-hole 2-D mini-golf game with several obstacles. The user must hi
 ![alt text](http://i361.photobucket.com/albums/oo52/PreschoolThemes/GroundhogCartoon.jpg "Gopher")
 
 **7. Course:** The course is a non moving object that represents the layout of each hole. 
+
 ![ttrojan](images/hole3.png "Hole 3")
 
 **8. Arrow:** The arrow is controlled by the user to determine the aim of the golf ball.
+
 ![ttrojan](images/arrow.png "Arrow")
 
 **9. Golf Ball:** The golf ball moves around based on the power and the aim
+
 ![ttrojan](images/golfball.png "Ball")
 
 
