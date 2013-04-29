@@ -1,12 +1,12 @@
 # Game - Programming Assignments Private Repository
 ### Student Information
-  + Name: Tommy Trojan
-  + USC Email: ttrojan@usc.edu
-  + USC ID: 0123456789
+  + Name: Kartik Chillakanti
+  + USC Email: chillaka@usc.edu
+  + USC ID: 1094069213
 
 ### Game Information
-  + Game Name: myAwsomeGame
-  + Game Description: One sentence game description
+  + Game Name: Minigolf Madness
+  + Game Description: A 2D mini golf game
   + [Game Design Doc](GameDesignDoc.md)
 
 
