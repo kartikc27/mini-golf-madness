@@ -37,6 +37,7 @@ void ToolBar::show() {
 void ToolBar::startGame()
 {
   m->name = m->n->get_name();
+  m->name2 = m->name.toStdString();
   if (m->name.length() < 1)
   {
     QMessageBox msgBox;
