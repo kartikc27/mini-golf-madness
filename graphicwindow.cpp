@@ -286,6 +286,11 @@ void GraphicWindow::endGame(int n)
     QMessageBox::information(this, "Score", str);
   }
   
+  lives = 5;
+  m->gt->updateLives();
+  strokes = 0;
+  m->gt->updateStrokes();
+  
   ofstream ofile;
   ofile.open("highscores.txt");
   
