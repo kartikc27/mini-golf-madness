@@ -29,8 +29,8 @@ GraphicWindow::GraphicWindow(MainWindow &mw)
     
     c1 = new CourseOne(course1, 0, 0);
     w1 = new Water1(water1, 0, 0);
-    g1 = new Gopher(gopher, 300, 160);
-    h = new Hole(hole, 345, 20);
+    g1 = new Gopher(gopher, 300, 160, *this);
+    h = new Hole(hole, 345, 20, *this);
     b = new Ball(ball, 400, 675, *this);
     s = new Star(star, 425, 125);
     a = new Arrow(arrow, b->getx()-20, b->gety()+15, *this);
@@ -75,12 +75,13 @@ void GraphicWindow::level2()
   
   scene->removeItem(a);
   scene->removeItem(t1);
+  water1 = new QPixmap ("images/water2.png");
   
   c1 = new CourseOne(course1, 0, 0);
   w1 = new Water1(water1, 0, 0);
-  g1 = new Gopher(gopher, 255, 160);
-  g2 = new Gopher(gopher, 470, 160);
-  h = new Hole(hole, 345, 20);
+  g1 = new Gopher(gopher, 255, 160, *this);
+  g2 = new Gopher(gopher, 470, 160, *this);
+  h = new Hole(hole, 345, 20, *this);
   b = new Ball(ball, 400, 675, *this);
   s = new Star(star, 340, 125);
   a = new Arrow(arrow, b->getx()-20, b->gety()+15, *this);
@@ -132,10 +133,10 @@ void GraphicWindow::level3()
   
   c1 = new CourseOne(course1, 0, 0);
   w1 = new Water1(water1, 0, 0);
-  g1 = new Gopher(gopher, 255, 160);
-  g2 = new Gopher(gopher, 500, 160);
-  g3 = new Gopher(gopher, 370, 160);
-  h = new Hole(hole, 345, 20);
+  g1 = new Gopher(gopher, 255, 160, *this);
+  g2 = new Gopher(gopher, 500, 160, *this);
+  g3 = new Gopher(gopher, 370, 160, *this);
+  h = new Hole(hole, 345, 20, *this);
   b = new Ball(ball, 400, 675, *this);
   s = new Star(star, 340, 125);
   a = new Arrow(arrow, b->getx()-20, b->gety()+15, *this);
@@ -246,8 +247,9 @@ void GraphicWindow::endGame(int n)
 
   }
   int finalscore = 0;
-  int diff = 20 - strokes;
+  int diff = 25 - strokes;
   
+    
   
   if (diff == 0)
   {
@@ -255,16 +257,15 @@ void GraphicWindow::endGame(int n)
   }
   else if (diff < 0)
   {
-    finalscore = points+(250*diff);
+    finalscore = points;
   }
   else if (diff > 0)
   {
     finalscore = points+(1000*diff);
   }
   if (n == 1)
-    finalscore = 0;
-  if (finalscore < 0)
-    finalscore = 0;
+    finalscore = points;
+  
   if (n == 0)
   {
     course1 = new QPixmap ("images/winner.png");
@@ -283,9 +284,28 @@ void GraphicWindow::endGame(int n)
     QString str;
     str.setNum(finalscore);
     QMessageBox::information(this, "Score", str);
-    m->close();
+  }
+  
+  ofstream ofile;
+  ofile.open("highscores.txt");
+  
+  Player *temp = new Player(m->name2, finalscore);
+  int j = 0;
+  for (j = 0; j < m->scores.size(); j++)
+  {
+    if (finalscore > m->scores[j]->score)
+      break;
+  } 
+  m->scores.insert(m->scores.begin()+j, temp);
+  
+  
+  for (int i = 0; i < m->scores.size(); i++)
+  {
+    ofile << m->scores[i]->name << " " << m->scores[i]->score << endl;
   }
 }
+  
+
 
 /** Timer for level 1
  */
@@ -352,3 +372,5 @@ void GraphicWindow::handleTimer3()
     brg->move();
   }
 }
+
+

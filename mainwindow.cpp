@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-#include <iostream>
+
 
 /** A constructor for MainWindow which creates and places the main widgets
  *  The class sets a line for name input and a slider to represent the power
@@ -7,6 +7,13 @@
 MainWindow::MainWindow()  
 {
   setFocus();
+  
+  string tempname;
+  int score; 
+  
+  
+   
+  
   
   t = new ToolBar(*this);
   addToolBar(t);
@@ -16,6 +23,15 @@ MainWindow::MainWindow()
   qdw3->setWidget( n );  
   addDockWidget(Qt::LeftDockWidgetArea, qdw3 );
   qdw3->setFeatures(QDockWidget::NoDockWidgetFeatures);
+  
+  ifstream ifile ("highscores.txt", ios::in);
+  int i = 0;
+  while (ifile.good())
+  {
+    ifile >> tempname >> score;
+    scores[i] = new Player(tempname, score);
+    i++;
+  }
   
   
   p = new Power(*window);

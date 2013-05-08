@@ -5,6 +5,8 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QMessageBox>
+#include <map>
+#include <fstream>
 #include "courseone.h"
 #include "gopher.h"
 #include "tile.h"
@@ -47,6 +49,7 @@ public:
     Star* s;
     Arrow* a;
     Water1* w1;
+    Water1* w2;
     Tile* t1;
     Tile* t2;
     Barge* brg;
@@ -59,6 +62,7 @@ public:
     QPixmap* water1;
     QPixmap* tile1;
     QPixmap* barge;
+    QPixmap* water2;
     MainWindow* m;
     QGraphicsScene *scene;
     QTimer* htimer;

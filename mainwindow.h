@@ -10,6 +10,12 @@
 #include "gametracker.h"
 #include "toolbar.h"
 #include "nameline.h"
+#include <deque>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include "player.h"
+
 
 
 
@@ -32,6 +38,8 @@ public:
     GameTracker *gt; 
     void keyPressEvent(QKeyEvent* e);
     QString name;
+    deque<Player*> scores;
+    string name2;
     
 private:
     
