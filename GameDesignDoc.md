@@ -8,7 +8,7 @@ The game is a 3-hole 2-D mini-golf game with several obstacles. The user must hi
 
 ![ttrojan](images/box.png "Tile")
 
-**2. Golf Hole:** There is one golf hole per hole and in each level the golf hole will move randomly in a given area. The user must make the golf ball touch the hole to complete the level. 
+**2. Golf Hole (Smart Object:** There is one golf hole per hole and in each level the golf hole will stay at a distance at least 150px from the ball. The user must make the golf ball touch the hole to complete the level. 
 
 ![ttrojan](images/golfhole.png "Hole")
 
@@ -24,7 +24,7 @@ The game is a 3-hole 2-D mini-golf game with several obstacles. The user must hi
 
 ![alt text](http://aucklandbushirecompany.co.nz/uploads/images/Cartoon-Star.jpg "Star")
 
-**6. Gophers:** Gophers move around the course. If the ball touches a gopher, the user loses a ball. As time progresses in a level, more gophers will pop up (and they will move faster), making it more difficult for the user to score. The gopher will look something like the following image: 
+**6. Gophers (Smart Objects):** Gophers move around the course. If the ball touches a gopher, the user loses a ball. As time progresses in a level, more gophers will pop up (and they will move faster), making it more difficult for the user to score. Gophers stay within a fixed 100px radius of the hole to make it difficult for the user to score. The gopher will look something like the following image: 
 
 ![alt text](http://i361.photobucket.com/albums/oo52/PreschoolThemes/GroundhogCartoon.jpg "Gopher")
 
@@ -52,6 +52,8 @@ The game is a 3-hole 2-D mini-golf game with several obstacles. The user must hi
 
 ## Gameplay
 The user's objective is to complete each hole, accumulating as many points as possible, while minimizing his or her strokes and time used. Each stroke begins with the player setting his or her aim and power. Aim is set using the A and D  keys, and power is set a slider. After this, the user must hit the space bar to execute the shot. The golf ball will then travel the golf course based on the power/aim and settle in a location. The arrow for aim will always be displayed behind the golf ball at the beginning of each stroke. The user will continue to play until his golf ball touches the hole. There are 3 holes to navigate.
+
+Gameplay begins once the user enters a name and presses Start Game. He or she must then click on the graphic window to start aiming. A game is restarted by pressing the Start button again
 
 ## Scoring
 Scoring is based on 2 things: 1) The number of strokes 2)  Stars collected along the way are worth 500 points each. The par for the entire course is 20. A 20 will receive 1000 points, and any stroke under will receive an additional 1000. Each stroke over equals a deduction of 250. You cannot get below a 0.
