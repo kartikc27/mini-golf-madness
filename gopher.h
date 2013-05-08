@@ -10,6 +10,7 @@
  * These objects move randomly.
 */
 
+class GraphicWindow;
 using namespace std;
 
 class Gopher : public QObject, public Thing 
@@ -17,7 +18,7 @@ class Gopher : public QObject, public Thing
     Q_OBJECT
     
 public:
-    Gopher(QPixmap* pm, int, int);
+    Gopher(QPixmap* pm, int, int, GraphicWindow&);
     ~Gopher();
     void show();
     void move();
@@ -25,6 +26,8 @@ public:
 
     
 private:  
+    void generateMove();
+    GraphicWindow *g;
  
 
 
